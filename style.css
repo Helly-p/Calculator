@@ -4,7 +4,7 @@
     margin: 0%;
 }
 
-section {
+.calc {
     /* margin: 10% 33%; */
     margin-top: 5%;
     display: flex;
@@ -23,11 +23,11 @@ table tr td {
     text-align: center;
 }
 
-td input[type="button"] {
+td input[type="button"], td button{
     width: 95%;
     height: 95%;
     border: none;
-    font-size: 25px;
+    font-size: 21px;
     background-color: rgba(255, 255, 255, 0.785);
 }
 
@@ -46,14 +46,80 @@ td input[type="text"] {
 .number input[type="button"] {
     background-color: white;
     font-weight: bolder;
+    font-size: 24px;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover, td button:hover {
     transition-duration: 0.3s;
     background-color: transparent;
+    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.233);
 }
 
 #equalsto input:hover {
     border: none;
     background-color: lightblue;
+}
+#delete button:hover {
+    border: none;
+    background-color: rgba(255, 0, 0, 0.432);
+}
+
+
+.first_row td input[type="button"]{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.first_row td input[type="button"]:hover{
+    transition-duration: 0.3s;
+    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+}
+
+.second_row td input[type="button"]{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.second_row td input[type="button"]:hover{
+    transition-duration: 0.3s;
+    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+}
+
+.second_row td:first-child,
+.second_row td:nth-child(2){
+    opacity: 0.5;
+} 
+
+.third_row td .btn{
+    height: 60px;
+    font-size: 18px;
+    border-radius: 0%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.third_row td .btn:hover, 
+.third_row td .btn:focus{
+    transition-duration: 0.3s;
+    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+}
+
+.dropdown-menu{
+    width: 290px;
+    border-radius: 0%;
+    background-color: rgb(230, 230, 230);
+    /* background-color: red; */
+    padding: 0px;
+}
+.dropdown-menu td input[type="button"]{
+    font-size: 18px;
+}
+p{
+    color: red;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 18px;
 }

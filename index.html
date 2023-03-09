@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -14,87 +15,174 @@
 </head>
 
 <body>
-    <section>
+    <div>
+        <br>
+        <h3 align="center">Scientific Calculator</h3>
+    </div>
+    <div class="calc">
         <table>
             <tr>
                 <td colspan="5">
-                    <input type="text" placeholder="0">
+                    <input type="text" id="ans" oninput="answer(this.value)" placeholder="0" onchange="showAns(this.value)">
+                    <p id="error"></p>
                 </td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td colspan="5"></td>
+            </tr> -->
+
+            <tr class="first_row">
+                <td>
+                    <input type="button" value="DEG">
+                </td>
+                <td>
+                    <input type="button" value="F-E">
+                </td>
+                <td colspan="3">
+                </td>
+            </tr>
+
+            <tr class="second_row">
+                <td>
+                    <input type="button" value="MC">
+                </td>
+                <td>
+                    <input type="button" value="MR">
+                </td>
+                <td>
+                    <input type="button" value="M+">
+                </td>
+                <td>
+                    <input type="button" value="M-">
+                </td>
+                <td>
+                    <input type="button" value="MS">
+                </td>
+            </tr>
+
+            <tr class="third_row">
+                <td colspan="2">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="./img/trigo_icon.png" alt="" srcset="" width="30" /> Trigonometry
+                        </button>
+                        <table class="dropdown-menu">
+                            <tr>
+                                <td>
+                                    <input type="button" value="sin">
+                                </td>
+                                <td>
+                                    <input type="button" value="cos">
+                                </td>
+                                <td>
+                                    <input type="button" value="tan">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" value="cosec">
+                                </td>
+                                <td>
+                                    <input type="button" value="sec">
+                                </td>
+                                <td>
+                                    <input type="button" value="cot">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td colspan="2" style="text-align: left;">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="./img/function_icon.jpg" alt="" srcset="" width="20" />&nbsp;&nbsp;&nbsp;Function
+                        </button>
+                        <table class="dropdown-menu">
+                            <tr>
+                                <td>
+                                    <input type="button" value="sin">
+                                </td>
+                                <td>
+                                    <input type="button" value="cos">
+                                </td>
+                                <td>
+                                    <input type="button" value="tan">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" value="cosec">
+                                </td>
+                                <td>
+                                    <input type="button" value="sec">
+                                </td>
+                                <td>
+                                    <input type="button" value="cot">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button value="2">2<sup>nd</sup></button>
+                </td>
+                <td>
+                    <button value="2">π</button>
+                </td>
+                <td>
+                    <button value="2">e</button>
+                </td>
+                <td>
+                    <button value="2">C</button>
+                </td>
+                <td id="delete">
+                    <button value="2"><img src="./img/close_icon.png" alt="" srcset="" width="30" /></button>
+                </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">x<sup>2</sup></button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">1/x</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">|x|</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">exp</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
+                    <button value="2">mod</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2"><sup>2</sup>&Sqrt;x</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">(</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">)</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">n!</button>
                 </td>
                 <td>
-                    <input type="button" value="1">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
-                </td>
-                <td>
-                    <input type="button" value="1">
+                    <button value="2">÷</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">x<sup>y</sup></button>
                 </td>
                 <td class="number">
                     <input type="button" value="7">
@@ -106,12 +194,12 @@
                     <input type="button" value="9">
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">×</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">10<sup>x</sup></button>
                 </td>
                 <td class="number">
                     <input type="button" value="4">
@@ -123,12 +211,12 @@
                     <input type="button" value="6">
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">-</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">log</button>
                 </td>
                 <td class="number">
                     <input type="button" value="1">
@@ -140,12 +228,12 @@
                     <input type="button" value="3">
                 </td>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">+</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" value="1">
+                    <button value="2">ln</button>
                 </td>
                 <td class="number">
                     <input type="button" value="+/-">
@@ -161,7 +249,19 @@
                 </td>
             </tr>
         </table>
-    </section>
+    </div>
+<script>
+    window.onload = (event) => {
+        document.getElementById("ans").focus();
+    };
+</script>
+
+    <script src="./script.js"></script>
+    <!-- Boostrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
