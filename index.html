@@ -17,20 +17,16 @@
 <body>
     <div>
         <br>
-        <h3 align="center">Scientific Calculator</h3>
+        <h3>Scientific Calculator</h3>
     </div>
     <div class="calc">
         <table>
             <tr>
                 <td colspan="5">
-                    <input type="text" id="ans" oninput="answer(this.value)" placeholder="0" onchange="showAns(this.value)">
+                    <input type="text" id="ans" oninput="answer(this.value)" placeholder="0" onchange="showAns()">
                     <p id="error"></p>
                 </td>
             </tr>
-            <!-- <tr>
-                <td colspan="5"></td>
-            </tr> -->
-
             <tr class="first_row">
                 <td>
                     <input type="button" value="DEG">
@@ -44,19 +40,19 @@
 
             <tr class="second_row">
                 <td>
-                    <input type="button" value="MC">
+                    <input type="button" value="MC" onclick="storeinMemory(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="MR">
+                    <input type="button" value="MR" onclick="storeinMemory(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="M+">
+                    <input type="button" value="M+" onclick="storeinMemory(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="M-">
+                    <input type="button" value="M-" onclick="storeinMemory(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="MS">
+                    <input type="button" value="MS" onclick="storeinMemory(this.value)">
                 </td>
             </tr>
 
@@ -70,24 +66,24 @@
                         <table class="dropdown-menu">
                             <tr>
                                 <td>
-                                    <input type="button" value="sin">
+                                    <button onclick="putdata(this.value)" value="sin(">sin</button>
                                 </td>
                                 <td>
-                                    <input type="button" value="cos">
+                                    <button onclick="putdata(this.value)" value="cos(">cos</button>
                                 </td>
                                 <td>
-                                    <input type="button" value="tan">
+                                    <button onclick="putdata(this.value)" value="tan(">tan</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="cosec">
+                                    <button onclick="putdata(this.value)" value="cosec(">cosec</button>
                                 </td>
                                 <td>
-                                    <input type="button" value="sec">
+                                    <button onclick="putdata(this.value)" value="sec(">sec</button>
                                 </td>
                                 <td>
-                                    <input type="button" value="cot">
+                                    <button onclick="putdata(this.value)" value="cot(">cot</button>
                                 </td>
                             </tr>
                         </table>
@@ -99,27 +95,13 @@
                             aria-expanded="false">
                             <img src="./img/function_icon.jpg" alt="" srcset="" width="20" />&nbsp;&nbsp;&nbsp;Function
                         </button>
-                        <table class="dropdown-menu">
+                        <table class="dropdown-menu function">
                             <tr>
                                 <td>
-                                    <input type="button" value="sin">
+                                    <button onclick="putdata(this.value)" value="floor(">⌊x⌋</button>
                                 </td>
                                 <td>
-                                    <input type="button" value="cos">
-                                </td>
-                                <td>
-                                    <input type="button" value="tan">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="button" value="cosec">
-                                </td>
-                                <td>
-                                    <input type="button" value="sec">
-                                </td>
-                                <td>
-                                    <input type="button" value="cot">
+                                    <button onclick="putdata(this.value)" value="ceil(">⌈x⌉</button>
                                 </td>
                             </tr>
                         </table>
@@ -134,124 +116,125 @@
                     <button value="2">2<sup>nd</sup></button>
                 </td>
                 <td>
-                    <button value="2">π</button>
+                    <button value="π" onclick="putdata(this.value)">π</button>
                 </td>
                 <td>
-                    <button value="2">e</button>
+                    <button value="e" onclick="putdata(this.value)">e</button>
                 </td>
                 <td>
-                    <button value="2">C</button>
+                    <button onclick="clearText()">C</button>
                 </td>
                 <td id="delete">
-                    <button value="2"><img src="./img/close_icon.png" alt="" srcset="" width="30" /></button>
+                    <button value="del" onclick="deleteChar()"><img src="./img/close_icon.png" alt="" srcset="" width="30" /></button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2">x<sup>2</sup></button>
+                    <button value="^2" onclick="putdata(this.value)">x<sup>2</sup></button>
                 </td>
                 <td>
-                    <button value="2">1/x</button>
+                    <button value="1/" onclick="putdata(this.value)">1/x</button>
                 </td>
                 <td>
-                    <button value="2">|x|</button>
+                    <button value="abs(" onclick="putdata(this.value)">|x|</button>
                 </td>
                 <td>
-                    <button value="2">exp</button>
+                    <button value=" exp " onclick="putdata(this.value)">exp</button>
                 </td>
                 <td>
-                    <button value="2">mod</button>
+                    <button value=" mod " onclick="putdata(this.value)">mod</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2"><sup>2</sup>&Sqrt;x</button>
+                    <button value="sqrt(" onclick="putdata(this.value)"><sup>2</sup>√x</button>
                 </td>
                 <td>
-                    <button value="2">(</button>
+                    <button value="(" onclick="putdata(this.value)">(</button>
                 </td>
                 <td>
-                    <button value="2">)</button>
+                    <button value=")" onclick="putdata(this.value)">)</button>
                 </td>
                 <td>
-                    <button value="2">n!</button>
+                    <button value="fact(" onclick="putdata(this.value)">n!</button>
                 </td>
                 <td>
-                    <button value="2">÷</button>
+                    <button value="/" 
+                    onclick="putdata(this.value)">÷</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2">x<sup>y</sup></button>
+                    <button value="^" onclick="putdata(this.value)">x<sup>y</sup></button>
                 </td>
                 <td class="number">
-                    <input type="button" value="7">
+                    <input type="button" value="7" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="8">
+                    <input type="button" value="8" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="9">
+                    <input type="button" value="9" onclick="putdata(this.value)">
                 </td>
                 <td>
-                    <button value="2">×</button>
+                    <button value="*" onclick="putdata(this.value)">×</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2">10<sup>x</sup></button>
+                    <button value="10^" onclick="putdata(this.value)">10<sup>x</sup></button>
                 </td>
                 <td class="number">
-                    <input type="button" value="4">
+                    <input type="button" value="4" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="5">
+                    <input type="button" value="5" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="6">
+                    <input type="button" value="6" onclick="putdata(this.value)">
                 </td>
                 <td>
-                    <button value="2">-</button>
+                    <button value="-" onclick="putdata(this.value)">-</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2">log</button>
+                    <button value="log(" onclick="putdata(this.value)">log</button>
                 </td>
                 <td class="number">
-                    <input type="button" value="1">
+                    <input type="button" value="1" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="2">
+                    <input type="button" value="2" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value="3">
+                    <input type="button" value="3" onclick="putdata(this.value)">
                 </td>
                 <td>
-                    <button value="2">+</button>
+                    <button value="+" onclick="putdata(this.value)">+</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button value="2">ln</button>
+                    <button value="ln(" onclick="putdata(this.value)">ln</button>
                 </td>
                 <td class="number">
                     <input type="button" value="+/-">
                 </td>
                 <td class="number">
-                    <input type="button" value="0">
+                    <input type="button" value="0" onclick="putdata(this.value)">
                 </td>
                 <td class="number">
-                    <input type="button" value=".">
+                    <input type="button" value="." onclick="putdata(this.value)">
                 </td>
                 <td id="equalsto">
-                    <input type="button" value="=">
+                    <input type="button" value="=" onclick="showAns()">
                 </td>
             </tr>
         </table>
     </div>
 <script>
-    window.onload = (event) => {
+    window.onload = () => {
         document.getElementById("ans").focus();
     };
 </script>

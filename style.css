@@ -2,24 +2,34 @@
     box-sizing: border-box;
     padding: 0%;
     margin: 0%;
+    color: white !important;
+}
+
+h3{
+    color: #320E3B !important;
+    text-align: center;
 }
 
 .calc {
     /* margin: 10% 33%; */
-    margin-top: 5%;
+    margin-top: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.calc table{
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
 table tr {
-    background-color: rgba(170, 170, 170, 0.242);
+    /* background-color: rgba(170, 170, 170, 0.242); */
+    background-color: #320E3B;
 }
 
 table tr td {
     width: 98px;
     height: 62px;
-    /* border: 1px solid black; */
     text-align: center;
 }
 
@@ -28,7 +38,8 @@ td input[type="button"], td button{
     height: 95%;
     border: none;
     font-size: 21px;
-    background-color: rgba(255, 255, 255, 0.785);
+    /* background-color: rgba(255, 255, 255, 0.785); */
+    background-color: #a175ac62;
 }
 
 td input[type="text"] {
@@ -44,24 +55,25 @@ td input[type="text"] {
 }
 
 .number input[type="button"] {
-    background-color: white;
+    /* background-color: white; */
+    background-color: #ac8ab491;
     font-weight: bolder;
     font-size: 24px;
 }
 
 input[type="button"]:hover, td button:hover {
     transition-duration: 0.3s;
-    background-color: transparent;
-    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.233);
+    background-color: #f0b2ff62;
+    /* box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.432); */
 }
 
 #equalsto input:hover {
     border: none;
-    background-color: lightblue;
+    background-color: #f0b2ff62;
 }
 #delete button:hover {
     border: none;
-    background-color: rgba(255, 0, 0, 0.432);
+    background-color: #6e4c7762;
 }
 
 
@@ -73,7 +85,7 @@ input[type="button"]:hover, td button:hover {
 
 .first_row td input[type="button"]:hover{
     transition-duration: 0.3s;
-    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
 .second_row td input[type="button"]{
@@ -84,7 +96,7 @@ input[type="button"]:hover, td button:hover {
 
 .second_row td input[type="button"]:hover{
     transition-duration: 0.3s;
-    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
 .second_row td:first-child,
@@ -104,21 +116,27 @@ input[type="button"]:hover, td button:hover {
 .third_row td .btn:hover, 
 .third_row td .btn:focus{
     transition-duration: 0.3s;
-    box-shadow: 1px 1px 5px 1px rgba(63, 63, 63, 0.199);
+    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
 .dropdown-menu{
     width: 290px;
     border-radius: 0%;
-    background-color: rgb(230, 230, 230);
-    /* background-color: red; */
+    background-color: #320E3B;
     padding: 0px;
 }
 .dropdown-menu td input[type="button"]{
     font-size: 18px;
 }
+.dropdown table{
+    box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.192);
+}
+
+.function{
+    width: 195px;
+}
 p{
-    color: red;
+    color: rgb(255, 144, 144) !important;
     text-align: right;
     padding-right: 20px;
     font-size: 18px;
