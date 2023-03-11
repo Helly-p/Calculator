@@ -11,6 +11,19 @@ h3 {
     display: none;
 }
 
+.first,
+#deg,
+.basic {
+    display: inline-block;
+}
+
+.second,
+#rad,
+.inverse,
+.hyp {
+    display: none;
+}
+
 .calc {
     /* margin: 10% 33%; */
     margin-top: 2%;
@@ -138,7 +151,7 @@ td button:hover {
 }
 
 .dropdown-menu {
-    width: 290px;
+    width: 395px;
     border-radius: 0%;
     background-color: #320E3B;
     padding: 0px;
