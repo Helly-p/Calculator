@@ -21,6 +21,17 @@
     </div>
     <div class="calc">
         <table>
+            <tr style="border-bottom: 0.1px solid rgba(255, 255, 255, 0.401);">
+                <td colspan="2">
+                    <img src="./img/icon 2.png" alt="" srcset="" width="28">
+                    <span>Calculator</span>
+                </td>
+                <td colspan="2">
+                </td>
+                <td id="close">
+                    <button>&#10006;</button>
+                </td>
+            </tr>
             <tr>
                 <td colspan="5">
                     <input type="text" id="ans" oninput="answer(this.value)" placeholder="0" onchange="showAns()">
@@ -93,7 +104,7 @@
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img src="./img/function_icon.jpg" alt="" srcset="" width="20" />&nbsp;&nbsp;&nbsp;Function
+                            <img src="./img/function_icon.png" alt="" srcset="" width="28" />&nbsp;&nbsp;&nbsp;Function
                         </button>
                         <table class="dropdown-menu function">
                             <tr>
@@ -125,7 +136,8 @@
                     <button onclick="clearText()">C</button>
                 </td>
                 <td id="delete">
-                    <button value="del" onclick="deleteChar()"><img src="./img/close_icon.png" alt="" srcset="" width="30" /></button>
+                    <button value="del" onclick="deleteChar()"><img src="./img/close_icon.png" alt="" srcset=""
+                            width="35" /></button>
                 </td>
             </tr>
             <tr>
@@ -159,8 +171,7 @@
                     <button value="fact(" onclick="putdata(this.value)">n!</button>
                 </td>
                 <td>
-                    <button value="/" 
-                    onclick="putdata(this.value)">÷</button>
+                    <button value="/" onclick="putdata(this.value)">÷</button>
                 </td>
             </tr>
             <tr>
@@ -233,11 +244,11 @@
             </tr>
         </table>
     </div>
-<script>
-    window.onload = () => {
-        document.getElementById("ans").focus();
-    };
-</script>
+    <script>
+        window.onload = () => {
+            document.getElementById("ans").focus();
+        };
+    </script>
 
     <script src="./script.js"></script>
     <!-- Boostrap JS -->

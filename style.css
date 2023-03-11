@@ -5,9 +5,10 @@
     color: white !important;
 }
 
-h3{
+h3 {
     color: #320E3B !important;
     text-align: center;
+    display: none;
 }
 
 .calc {
@@ -16,9 +17,23 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* display: none; */
 }
 
-.calc table{
+span {
+    font-size: 23px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+#close button {
+    color: white;
+    border: none;
+    background-color: transparent;
+    padding-left: 40px;
+}
+
+.calc table {
     box-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
 
@@ -33,7 +48,8 @@ table tr td {
     text-align: center;
 }
 
-td input[type="button"], td button{
+td input[type="button"],
+td button {
     width: 95%;
     height: 95%;
     border: none;
@@ -61,7 +77,8 @@ td input[type="text"] {
     font-size: 24px;
 }
 
-input[type="button"]:hover, td button:hover {
+input[type="button"]:hover,
+td button:hover {
     transition-duration: 0.3s;
     background-color: #f0b2ff62;
     /* box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.432); */
@@ -71,40 +88,41 @@ input[type="button"]:hover, td button:hover {
     border: none;
     background-color: #f0b2ff62;
 }
+
 #delete button:hover {
     border: none;
     background-color: #6e4c7762;
 }
 
 
-.first_row td input[type="button"]{
+.first_row td input[type="button"] {
     font-size: 18px;
     font-weight: bold;
     background-color: transparent;
 }
 
-.first_row td input[type="button"]:hover{
+.first_row td input[type="button"]:hover {
     transition-duration: 0.3s;
     box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
-.second_row td input[type="button"]{
+.second_row td input[type="button"] {
     font-size: 18px;
     font-weight: bold;
     background-color: transparent;
 }
 
-.second_row td input[type="button"]:hover{
+.second_row td input[type="button"]:hover {
     transition-duration: 0.3s;
     box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
 .second_row td:first-child,
-.second_row td:nth-child(2){
+.second_row td:nth-child(2) {
     opacity: 0.5;
-} 
+}
 
-.third_row td .btn{
+.third_row td .btn {
     height: 60px;
     font-size: 18px;
     border-radius: 0%;
@@ -113,29 +131,32 @@ input[type="button"]:hover, td button:hover {
     border: none;
 }
 
-.third_row td .btn:hover, 
-.third_row td .btn:focus{
+.third_row td .btn:hover,
+.third_row td .btn:focus {
     transition-duration: 0.3s;
     box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
 }
 
-.dropdown-menu{
+.dropdown-menu {
     width: 290px;
     border-radius: 0%;
     background-color: #320E3B;
     padding: 0px;
 }
-.dropdown-menu td input[type="button"]{
+
+.dropdown-menu td input[type="button"] {
     font-size: 18px;
 }
-.dropdown table{
+
+.dropdown table {
     box-shadow: 5px 5px 5px 1px rgba(255, 255, 255, 0.192);
 }
 
-.function{
+.function {
     width: 195px;
 }
-p{
+
+p {
     color: rgb(255, 144, 144) !important;
     text-align: right;
     padding-right: 20px;
