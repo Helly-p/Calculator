@@ -100,11 +100,12 @@ td button:hover {
 #equalsto input:hover {
     border: none;
     background-color: #f0b2ff62;
+    background-color: rgba(140, 209, 255, 0.499);
 }
 
 #delete button:hover {
     border: none;
-    background-color: #6e4c7762;
+    background-color: rgba(243, 60, 60, 0.338);
 }
 
 

@@ -1,7 +1,7 @@
 const input = document.getElementById("ans");
 const values = {
     'π': 3.14,
-    'e': 2.718,
+    'E': 2.718,
     '^2': '**2',
     '^3': '**3',
     ' mod ': '%',
@@ -48,12 +48,12 @@ function factorial(data) {
 }
 function putdata(data) {
     input.value += data;
-    for (let x in values) {
-        if (x == data) {
-            data = values[x];
-        }
-    }
-    result += data;
+    // for (let x in values) {
+    //     if (x == data) {
+    //         data = values[x];
+    //     }
+    // }
+    // result += data;
 }
 function storeinMemory() {
     console.log(result);
@@ -76,13 +76,19 @@ function deleteChar() {
 function showAns() {
     let count = 0, pattern1 = /[\(]/g, pattern2 = /[\)]/g;
     try {
-        let op;
-        if (result == 0) {
-            op = input.value;
+        let op, inp = input.value;
+        for (let x in values) {
+
+            if (inp.includes(x)) {
+                // alert(x)
+                inp = inp.replace(x, values[x]);
+            }
         }
-        else {
-            op = result;
+        if (inp.includes('E')) {
+            inp = inp.replace('E', 2.718);
         }
+        op = inp;
+        console.log(op);
         count = op.replace(pattern1, "").length;
         // console.log(op.match(pattern2).length);
         if (count != op.replace(pattern2, "").length) {
@@ -99,6 +105,7 @@ function showAns() {
     }
 }
 
+// Memory function
 function storeinMemory(value) {
     let data;
     if (value == "MS") {
@@ -124,6 +131,8 @@ function storeinMemory(value) {
         input.value = eval(exp);
     }
 }
+
+// All toggle menus
 function second_menu() {
     let first_class = document.getElementsByClassName("first");
     let second_class = document.getElementsByClassName("second");
