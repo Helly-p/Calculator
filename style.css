@@ -8,7 +8,7 @@
 h3 {
     color: #320E3B !important;
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 .first,
@@ -109,7 +109,7 @@ td button:hover {
 }
 
 
-.first_row td input[type="button"] {
+/* .first_row td input[type="button"] {
     font-size: 18px;
     font-weight: bold;
     background-color: transparent;
@@ -118,6 +118,13 @@ td button:hover {
 .first_row td input[type="button"]:hover {
     transition-duration: 0.3s;
     box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
+} */
+
+.first_row td h5{
+    color: rgb(192, 189, 189) !important;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 40px;
 }
 
 .second_row td input[type="button"] {

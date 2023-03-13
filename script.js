@@ -1,4 +1,13 @@
-const input = document.getElementById("ans");
+// Dropdown Menu Stop toggling
+const dropdown_menu = document.getElementsByClassName("menus");
+for(let i = 0; i < 2; i++ ){
+    dropdown_menu[i].addEventListener("click",function(e){
+        e.stopPropagation();
+    })
+}
+
+// Calc Functionalities
+const input = document.getElementById("input");
 const values = {
     'π': 3.14,
     'E': 2.718,
@@ -24,12 +33,12 @@ const values = {
     'sec(': '1/Math.cos(',
     'cot(': '1/Math.tan(',
     'fact(': 'factorial(',
-    'asin(': 'Math.asin(',
-    'acosec(': '1/Math.asin(',
-    'acos(': 'Math.acos(',
-    'asec(': '1/Math.acos(',
-    'atan(': 'Math.atan(',
-    'acot(': '1/Math.atan(',
+    'sinI(': 'Math.asin(',
+    'cosecI(': '1/Math.asin(',
+    'cosI(': 'Math.acos(',
+    'secI(': '1/Math.acos(',
+    'tanI(': 'Math.atan(',
+    'cotI(': '1/Math.atan(',
     'sinh(': 'Math.sinh(',
     'cosech(': '1/Math.sinh(',
     'cosh(': 'Math.cosh(',
@@ -39,6 +48,8 @@ const values = {
 }
 var result = '';
 var output;
+var ans = document.getElementById("ans");
+
 function factorial(data) {
     let fact = 1;
     for (let i = 1; i <= data; i++) {
@@ -62,6 +73,7 @@ function storeinMemory() {
 function clearText() {
     input.value = "";
     result = '';
+    ans.innerHTML = "Output : 0";
 }
 function deleteChar() {
     let str = input.value;
@@ -78,10 +90,9 @@ function showAns() {
     try {
         let op, inp = input.value;
         for (let x in values) {
-
             if (inp.includes(x)) {
                 // alert(x)
-                inp = inp.replace(x, values[x]);
+                inp = inp.replaceAll(x, values[x]);
             }
         }
         if (inp.includes('E')) {
@@ -92,17 +103,17 @@ function showAns() {
         count = op.replace(pattern1, "").length;
         // console.log(op.match(pattern2).length);
         if (count != op.replace(pattern2, "").length) {
-            // alert("Hello")
             throw "*Put valid paranthesis.";
         }
         output = eval(op);
-        document.getElementById("ans").value = output;
+        ans.innerHTML = "Output : " + output;
         document.getElementById("error").innerHTML = "";
+        input.value = ''; 
     }
     catch (e) {
-        // alert(e);
         document.getElementById("error").innerHTML = "*Enter valid expression.<br>" + e;
     }
+
 }
 
 // Memory function
@@ -116,19 +127,21 @@ function storeinMemory(value) {
     }
     if (value == "MR") {
         data = localStorage.getItem('calcdata');
-        input.value = data;
+        ans.innerHTML = "Memory Recall : " + data;
     }
     if (value == "M+") {
         let exp;
         data = localStorage.getItem('calcdata');
         exp = input.value + '+' + data;
         input.value = eval(exp);
+        ans.innerHTML = "Memory Value Addition : " + eval(exp);
     }
     if (value == "M-") {
         let exp;
         data = localStorage.getItem('calcdata');
         exp = input.value + '-' + data;
         input.value = eval(exp);
+        ans.innerHTML = "Memory Value Subtraction : " + eval(exp);
     }
 }
 
