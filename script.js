@@ -59,12 +59,6 @@ function factorial(data) {
 }
 function putdata(data) {
     input.value += data;
-    // for (let x in values) {
-    //     if (x == data) {
-    //         data = values[x];
-    //     }
-    // }
-    // result += data;
 }
 function storeinMemory() {
     console.log(result);
@@ -91,17 +85,14 @@ function showAns() {
         let op, inp = input.value;
         for (let x in values) {
             if (inp.includes(x)) {
-                // alert(x)
                 inp = inp.replaceAll(x, values[x]);
             }
         }
         if (inp.includes('E')) {
-            inp = inp.replace('E', 2.718);
+            inp = inp.replaceAll('E', 2.718);
         }
         op = inp;
-        console.log(op);
         count = op.replace(pattern1, "").length;
-        // console.log(op.match(pattern2).length);
         if (count != op.replace(pattern2, "").length) {
             throw "*Put valid paranthesis.";
         }

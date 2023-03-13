@@ -8,29 +8,24 @@
 h3 {
     color: #320E3B !important;
     text-align: center;
-    /* display: none; */
 }
 
 .first,
-#deg,
 .basic {
     display: inline-block;
 }
 
 .second,
-#rad,
 .inverse,
 .hyp {
     display: none;
 }
 
 .calc {
-    /* margin: 10% 33%; */
     margin-top: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
 }
 
 span {
@@ -51,7 +46,6 @@ span {
 }
 
 table tr {
-    /* background-color: rgba(170, 170, 170, 0.242); */
     background-color: #320E3B;
 }
 
@@ -67,7 +61,6 @@ td button {
     height: 95%;
     border: none;
     font-size: 21px;
-    /* background-color: rgba(255, 255, 255, 0.785); */
     background-color: #a175ac62;
 }
 
@@ -84,7 +77,6 @@ td input[type="text"] {
 }
 
 .number input[type="button"] {
-    /* background-color: white; */
     background-color: #ac8ab491;
     font-weight: bolder;
     font-size: 24px;
@@ -94,7 +86,6 @@ input[type="button"]:hover,
 td button:hover {
     transition-duration: 0.3s;
     background-color: #f0b2ff62;
-    /* box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.432); */
 }
 
 #equalsto input:hover {
@@ -107,18 +98,6 @@ td button:hover {
     border: none;
     background-color: rgba(243, 60, 60, 0.338);
 }
-
-
-/* .first_row td input[type="button"] {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: transparent;
-}
-
-.first_row td input[type="button"]:hover {
-    transition-duration: 0.3s;
-    box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.37);
-} */
 
 .first_row td h5{
     color: rgb(192, 189, 189) !important;
