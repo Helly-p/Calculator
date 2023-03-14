@@ -156,6 +156,10 @@ td button:hover {
     width: 195px;
 }
 
+#function_btn{
+    width: 190px;
+}
+
 p {
     color: rgb(255, 144, 144) !important;
     text-align: right;
