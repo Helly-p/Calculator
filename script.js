@@ -162,14 +162,14 @@ function second_menu() {
   for (let i = 0; i < 6; i++) {
 
     if (style == "inline-block") {
-      first_class[i].style.display = "none";
-      second_class[i].style.display = "inline-block";
-    } else {
-      first_class[i].style.display = "inline-block";
-      second_class[i].style.display = "none";
+        first_class[i].style.display = "none";
+        second_class[i].style.display = "inline-block";
     }
-
-  }
+    else {
+          first_class[i].style.display = "inline-block";
+          second_class[i].style.display = "none";
+    }  
+  } 
 }
 
 // Inverse Trigo Toggle menu
