@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
 
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -64,8 +65,7 @@
             <tr class="third_row">
                 <td colspan="2">
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="./img/trigo_icon.png" alt="Trigonometry_Icon" width="30" /> Trigonometry
                         </button>
                         <table class="dropdown-menu">
@@ -75,20 +75,17 @@
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="sin(">sin</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="sinI(">sin<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="sinI(">sin<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="sinh(">sinh</button>
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="cos(">cos</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="cosI(">cos<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cosI(">cos<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="cosh(">cosh</button>
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="tan(">tan</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="tanI(">tan<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="tanI(">tan<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="tanh(">tanh</button>
                                 </td>
                             </tr>
@@ -98,20 +95,17 @@
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="cosec(">cosec</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="cosecI(">cosec<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cosecI(">cosec<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="cosech(">cosech</button>
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="sec(">sec</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="secI(">sec<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="secI(">sec<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="sech(">sech</button>
                                 </td>
                                 <td>
                                     <button class="basic" onclick="putdata(this.value)" value="cot(">cot</button>
-                                    <button class="inverse" onclick="putdata(this.value)"
-                                        value="cotI(">cot<sup>-1</sup></button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cotI(">cot<sup>-1</sup></button>
                                     <button class="hyp" onclick="putdata(this.value)" value="coth(">coth</button>
                                 </td>
                             </tr>
@@ -120,10 +114,8 @@
                 </td>
                 <td colspan="3" style="text-align: left;">
                     <div class="dropdown">
-                        <button class="btn dropdown-toggle" id="function_btn" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="./img/function_icon.png" alt="Function_Icon"
-                                width="28" />&nbsp;&nbsp;&nbsp;Function
+                        <button class="btn dropdown-toggle" id="function_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/function_icon.png" alt="Function_Icon" width="28" />&nbsp;&nbsp;&nbsp;Function
                         </button>
                         <table class="dropdown-menu function">
                             <tr>
@@ -153,8 +145,9 @@
                     <button onclick="clearText()">C</button>
                 </td>
                 <td id="delete">
-                    <button value="del" onclick="deleteChar()"><img src="./img/close_icon.png" alt="Delete"
-                            width="35" /></button>
+                    <button value="del" onclick="deleteChar()">
+                        <img src="./img/close_icon.png" alt="Delete" width="35" />
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -267,12 +260,14 @@
             </tr>
         </table>
     </div>
+
     <script>
         window.onload = () => {
             document.getElementById("ans").focus();
         };
     </script>
 
+    <!-- Custom JS -->
     <script src="./script.js"></script>
 
     <!-- Boostrap JS -->
