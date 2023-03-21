@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div>
+        <br>
+        <h3>Scientific Calculator</h3>
+    </div>
+    <div class="calc">
+        <table>
+            <tr style="border-bottom: 0.1px solid rgba(255, 255, 255, 0.401);">
+                <td colspan="2">
+                    <img src="./img/icon 2.png" alt="Calc_img" width="28">
+                    <span>Calculator</span>
+                </td>
+                <td colspan="2">
+                </td>
+                <td id="close">
+                    <button>&#10006;</button>
+                </td>
+            </tr>
+            <tr class="first_row">
+                <td colspan="5">
+                    <h5 id="ans">Output : 0</h5>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <input type="text" id="input" placeholder="0" onchange="showAns()">
+                    <p id="error"></p>
+                </td>
+            </tr>
+
+            <tr class="second_row">
+                <td>
+                    <input type="button" value="MC" onclick="storeinMemory(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="MR" onclick="storeinMemory(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="M+" onclick="storeinMemory(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="M-" onclick="storeinMemory(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="MS" onclick="storeinMemory(this.value)">
+                </td>
+            </tr>
+
+            <tr class="third_row">
+                <td colspan="2">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/trigo_icon.png" alt="Trigonometry_Icon" width="30" /> Trigonometry
+                        </button>
+                        <table class="dropdown-menu">
+                            <tr>
+                                <td>
+                                    <button class="menus" onclick="inverse_menu()">2<sup>nd</sup></button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="sin(">sin</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="sinI(">sin<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="sinh(">sinh</button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="cos(">cos</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cosI(">cos<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="cosh(">cosh</button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="tan(">tan</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="tanI(">tan<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="tanh(">tanh</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="menus" onclick="hyp_menu()">hyp</button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="cosec(">cosec</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cosecI(">cosec<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="cosech(">cosech</button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="sec(">sec</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="secI(">sec<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="sech(">sech</button>
+                                </td>
+                                <td>
+                                    <button class="basic" onclick="putdata(this.value)" value="cot(">cot</button>
+                                    <button class="inverse" onclick="putdata(this.value)" value="cotI(">cot<sup>-1</sup></button>
+                                    <button class="hyp" onclick="putdata(this.value)" value="coth(">coth</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td colspan="3" style="text-align: left;">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" id="function_btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/function_icon.png" alt="Function_Icon" width="28" />&nbsp;&nbsp;&nbsp;Function
+                        </button>
+                        <table class="dropdown-menu function">
+                            <tr>
+                                <td>
+                                    <button onclick="putdata(this.value)" value="floor(">⌊x⌋</button>
+                                </td>
+                                <td>
+                                    <button onclick="putdata(this.value)" value="ceil(">⌈x⌉</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button onclick="second_menu()">2<sup>nd</sup></button>
+                </td>
+                <td>
+                    <button value="π" onclick="putdata(this.value)">π</button>
+                </td>
+                <td>
+                    <button value="E" onclick="putdata(this.value)">e</button>
+                </td>
+                <td>
+                    <button onclick="clearText()">C</button>
+                </td>
+                <td id="delete">
+                    <button value="del" onclick="deleteChar()">
+                        <img src="./img/close_icon.png" alt="Delete" width="35" />
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="^2" class="first" onclick="putdata(this.value)">x<sup>2</sup></button>
+                    <button value="^3" class="second" onclick="putdata(this.value)">x<sup>3</sup></button>
+                </td>
+                <td>
+                    <button value="1/" onclick="putdata(this.value)">1/x</button>
+                </td>
+                <td>
+                    <button value="abs(" onclick="putdata(this.value)">|x|</button>
+                </td>
+                <td>
+                    <button value=" exp " onclick="putdata(this.value)">exp</button>
+                </td>
+                <td>
+                    <button value=" mod " onclick="putdata(this.value)">mod</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="sqrt(" class="first" onclick="putdata(this.value)"><sup>2</sup>√x</button>
+                    <button value="cbrt(" class="second" onclick="putdata(this.value)"><sup>3</sup>√x</button>
+                </td>
+                <td>
+                    <button value="(" onclick="putdata(this.value)">(</button>
+                </td>
+                <td>
+                    <button value=")" onclick="putdata(this.value)">)</button>
+                </td>
+                <td>
+                    <button value="fact(" onclick="putdata(this.value)">n!</button>
+                </td>
+                <td>
+                    <button value="/" onclick="putdata(this.value)">÷</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="^" class="first" onclick="putdata(this.value)">x<sup>y</sup></button>
+                    <button value="^" class="second" onclick="putdata(this.value)">x<sup>y</sup></button>
+                </td>
+                <td class="number">
+                    <input type="button" value="7" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="8" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="9" onclick="putdata(this.value)">
+                </td>
+                <td>
+                    <button value="*" onclick="putdata(this.value)">×</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="10^" class="first" onclick="putdata(this.value)">10<sup>x</sup></button>
+                    <button value="2^" class="second" onclick="putdata(this.value)">2<sup>x</sup></button>
+                </td>
+                <td class="number">
+                    <input type="button" value="4" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="5" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="6" onclick="putdata(this.value)">
+                </td>
+                <td>
+                    <button value="-" onclick="putdata(this.value)">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="log(" class="first" onclick="putdata(this.value)">log</button>
+                    <button value="log2(" class="second" onclick="putdata(this.value)">log<sub>2</sub></button>
+                </td>
+                <td class="number">
+                    <input type="button" value="1" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="2" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="3" onclick="putdata(this.value)">
+                </td>
+                <td>
+                    <button value="+" onclick="putdata(this.value)">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button value="ln(" class="first" onclick="putdata(this.value)">ln</button>
+                    <button value=" exp " class="second" onclick="putdata(this.value)">e<sup>x</sup></button>
+                </td>
+                <td class="number">
+                    <input type="button" value="+/-">
+                </td>
+                <td class="number">
+                    <input type="button" value="0" onclick="putdata(this.value)">
+                </td>
+                <td class="number">
+                    <input type="button" value="." onclick="putdata(this.value)">
+                </td>
+                <td id="equalsto">
+                    <input type="button" value="=" onclick="showAns()">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        window.onload = () => {
+            document.getElementById("ans").focus();
+        };
+    </script>
+
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+
+    <!-- Boostrap JS -->
+    <script src="./bootstrap/popper.min.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>
