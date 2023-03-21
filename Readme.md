@@ -12,4 +12,5 @@
 ###### Output :
 
 <img src="./img/Output.png"/>
-<img src="./img/trigo1.png"/>
+<img src="./img/trigo1.png" style="float:left"/>
+<img src="./img/inverse_trigo.png" style="float:right"/>
